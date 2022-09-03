@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+   namespace:名称空间
+   mapper代理需要将namespace更改为Mapper接口的全限名。
+-->
+<mapper namespace="com.duan.mapper.StudentMapper">
+    <resultMap id="StudentResultMap" type="Student">
+        <result property="cnScore" column="cn_score"></result>
+        <result property="enScore" column="en_score"></result>
+        <result property="mathScore" column="math_score"></result>
+        <result property="homeTown" column="home_town"></result>
+     </resultMap>
+    <delete id="deleteByIds" parameterType="list">
+        delete from student
+        <where>
+            id in<foreach collection="array" item="id" open="(" close=")" separator="," >
+            #{id}
+        </foreach>
+        </where>
+    </delete>
+
+</mapper>
