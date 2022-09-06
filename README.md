@@ -7,9 +7,9 @@
 
 ##### 环境依赖
 
-mybatis 3.5.5
+* mybatis 3.5.5
 
-mysql-connector-java   8.0.11
+* mysql-connector-java   8.0.11
 
 ##### 部署步骤
 
