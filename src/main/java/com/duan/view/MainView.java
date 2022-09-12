@@ -33,7 +33,7 @@ public class MainView extends JFrame {
     JButton preBtn=new JButton("上一页");
     JButton nextBtn=new JButton("下一页");
     private int curPage=1; //当前页数
-    private int pageSize=5;
+    private int pageSize=8;
     MainViewHandle mainViewHandle=new MainViewHandle(this);
 
 
@@ -116,6 +116,18 @@ public class MainView extends JFrame {
         StudentService service = new StudentServiceImpl();
         StudentRequest request = new StudentRequest();
         request.setPageNow(curPage);
+        request.setPageSize(pageSize);
+        TableDTO dto = service.selectStudents(request);
+        MainViewTableModel mainViewTableModel = MainViewTableModel.assembleModel(dto.getData());
+        mainViewTable.setDataModel(mainViewTableModel);
+        //表格渲染方式
+        mainViewTable.renderRule();
+        return mainViewTableModel;
+    }
+    public MainViewTableModel SelectByPageNow() {
+        StudentService service = new StudentServiceImpl();
+        StudentRequest request = new StudentRequest();
+        request.setPageNow(5);
         request.setPageSize(pageSize);
         TableDTO dto = service.selectStudents(request);
         MainViewTableModel mainViewTableModel = MainViewTableModel.assembleModel(dto.getData());

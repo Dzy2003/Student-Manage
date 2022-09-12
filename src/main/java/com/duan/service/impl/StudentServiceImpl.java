@@ -17,6 +17,11 @@ import java.util.Vector;
 public class StudentServiceImpl implements StudentService {
     SqlSessionFactory sessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
 
+    /**
+     * 查询所有学生
+     * @param request
+     * @return
+     */
     @Override
     public TableDTO selectStudents(StudentRequest request) {
 
@@ -48,6 +53,13 @@ public class StudentServiceImpl implements StudentService {
         session.close();
         return dto;
     }
+
+    /**
+     * 通过名字查找
+     * @param request
+     * @param name
+     * @return
+     */
 
     @Override
     public TableDTO searchByName(StudentRequest request,String name) {

@@ -12,5 +12,4 @@ import java.util.List;
 public interface AdminMapper {
     @Select("select * from manager where username=#{userName} and password=#{password}")
     Admin select(@Param("userName") String userName, @Param("password") String password);
-
 }

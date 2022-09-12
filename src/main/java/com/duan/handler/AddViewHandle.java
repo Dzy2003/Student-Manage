@@ -29,7 +29,7 @@ public class AddViewHandle implements ActionListener {
             Boolean flag = studentService.AddStudent(student);
             if(flag){
                 JOptionPane.showMessageDialog(addStudentView,"添加成功");
-                mainView.SelectByPage();
+                mainView.SelectByPageNow();
                 addStudentView.dispose();
             }else {
                 JOptionPane.showMessageDialog(addStudentView,"添加失败");
