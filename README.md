@@ -16,7 +16,7 @@
 1. 登录界面连接数据库进行账号和密码校验。
 2. 查询所有学生信息，根据姓名查询学生信息，增加学生信息，修改学生信息以及分页查询功能。
 
-#####环境依赖
+##### 环境依赖
 
 * mybatis 3.5.5
 
@@ -28,7 +28,7 @@
 * IDEA
 * Mysql
 
-#####部署步骤
+##### 部署步骤
 
 1. 在本地mysql中建manager表，字段为： id，username，password；以及student表，字段为：id，name，home_town,cn_score,en_score,math_score.
 2. 更改resources目录下的mybatis-config.xml配置信息为自己mysql的配置信息。
